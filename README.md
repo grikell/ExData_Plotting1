@@ -34,3 +34,18 @@ Upon execution, each script looks for the input text file (uncompressed) in the 
 Otherwise it downloads the file from the source URL and uncompresses it.
 
 Then it loads the entire datasets in memory, selects the rows corresponding to the interval specified (2007 Feb.1st and Feb.2nd) and then it creates the graph.
+
+
+Here are the four plots, as generated from the R scripts.
+
+### Plot 1
+![plot1](plot1.png) 
+
+### Plot 2
+![plot2](plot2.png) 
+
+### Plot 3
+![plot3](plot3.png) 
+
+### Plot 4
+![plot4](plot4.png) 
