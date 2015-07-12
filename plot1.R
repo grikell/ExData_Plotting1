@@ -17,7 +17,7 @@ if (!file.exists(inputFile)) {
 		print("Downloading file from source")
 		download.file(url=URL,destfile=zipFile,method="curl",quiet=TRUE)
 	}
-# Unzip
+# Unzip (read.csv could also read zipfiles, but in this way code is simpler as the <txt> file may exist)
 	unzip(zipFile)
 }
 
@@ -31,6 +31,8 @@ x$Date=as.Date(x$Date,"%d/%m/%Y")
 sel<-x[x$Date>="2007-02-01" & x$Date<="2007-02-02","Global_active_power"]
 
 # Generate plot (to png)
+# I prefer to generate directly the png file (e.g. no display) in order to avoid any difference
+# e.g. background, etc
 png(filename="plot1.png")
 hist(sel,main="Global Active Power",xlab="Global Active Power (kilowatts)",col="red")
 dev.off()

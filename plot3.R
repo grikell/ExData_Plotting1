@@ -17,7 +17,7 @@ if (!file.exists(inputFile)) {
 		print("Downloading file from source")
 		download.file(url=URL,destfile=zipFile,method="curl",quiet=TRUE)
 	}
-# Unzip
+# Unzip (read.csv could also read zipfiles, but in this way code is simpler as the <txt> file may exist)
 	unzip(zipFile)
 }
 
@@ -33,7 +33,10 @@ x$dateTime<-strptime(paste(x$Date,x$Time),format="%d/%m/%Y %H:%M:%S")
 sel<-x[x$dateTime>="2007-02-01 00:00:00" & x$dateTime<"2007-02-03 00:00:00",
 	c("dateTime","Sub_metering_1","Sub_metering_2","Sub_metering_3")]
 
-#Generate plot, adding first graph and then the other two
+#Generate plot  (to png), adding first graph and then the other two
+# I prefer to generate directly the png file (e.g. no display) in order to avoid any difference
+# e.g. background, etc
+
 png(filename="plot3.png")
 plot(sel$dateTime,sel$Sub_metering_1,type="l",col="black",xlab="",ylab="Energy sub metering")
 points(sel$dateTime,sel$Sub_metering_2,type="l",col="red")

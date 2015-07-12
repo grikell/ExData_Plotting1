@@ -17,7 +17,7 @@ if (!file.exists(inputFile)) {
 		print("Downloading file from source")
 		download.file(url=URL,destfile=zipFile,method="curl",quiet=TRUE)
 	}
-# Unzip
+# Unzip (read.csv could also read zipfiles, but in this way code is simpler as the <txt> file may exist)
 	unzip(zipFile)
 }
 
@@ -32,7 +32,9 @@ x$datetime<-strptime(paste(x$Date,x$Time),format="%d/%m/%Y %H:%M:%S")
 #Select time interval
 sel<-x[x$datetime>="2007-02-01 00:00:00" & x$datetime<"2007-02-03 00:00:00",]
 
-#Generate plot
+# Generate plot (to png)
+# I prefer to generate directly the png file (e.g. no display) in order to avoid any difference
+# e.g. background, etc
 png(filename="plot4.png")
 
 #Grid 2x2
