@@ -5,7 +5,8 @@ the <a href="http://archive.ics.uci.edu/ml/">UC Irvine Machine
 Learning Repository</a>, a popular repository for machine learning
 datasets.
 
-The datafile can be found [here (20MB)]("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip" Electric power consumption) 
+The datafile can be found 
+[here (20MB)]("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip" Electric power consumption) 
 
 The file contains measurements of electric power consumption in
 one household with a one-minute sampling rate over a period of almost
