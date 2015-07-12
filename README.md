@@ -36,6 +36,7 @@ Otherwise it downloads the file from the source URL and uncompresses it.
 
 Then it loads the entire datasets in memory, selects the rows corresponding to the interval specified (2007 Feb.1st and Feb.2nd) and then it creates the graph.
 
+The drawings are directly generated using the _png_ device (that is, no graphic output on display), in order to avoid any difference in the output (e.g. transparent background)
 
 Here are the four plots, as generated from the R scripts.
 
